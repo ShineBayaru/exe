@@ -1,0 +1,33 @@
+name: Build Electron App for Windows
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and package the application
+        run: npm run pack
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: technical-glossary-windows-installer
+          path: release/*.exe
