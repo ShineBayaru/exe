@@ -2,6 +2,7 @@
   "name": "technical-glossary-desktop",
   "version": "1.0.1",
   "description": "A powerful desktop-style application to search, filter, and view a comprehensive technical glossary.",
+  "author": "CRASCAD",
   "main": "electron/main.js",
   "scripts": {
     "start": "electron-vite dev",
@@ -17,12 +18,9 @@
       "electron/**/*"
     ],
     "win": {
-      "target": "nsis",
-      "publisherName": null
+      "target": "nsis"
     },
-    "publish": {
-      "provider": "never"
-    }
+    "publish": null
   },
   "dependencies": {
     "lucide-react": "^0.417.0",
