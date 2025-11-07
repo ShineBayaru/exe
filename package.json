@@ -5,22 +5,9 @@
   "author": "CRASCAD",
   "main": "electron/main.js",
   "scripts": {
-    "start": "electron-vite dev",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "pack": "npm run build && electron-builder --win"
-  },
-  "build": {
-    "appId": "com.crascad.technicalglossary",
-    "productName": "Technical Glossary Search",
-    "files": [
-      "dist/**/*",
-      "electron/**/*"
-    ],
-    "win": {
-      "target": "nsis"
-    },
-    "publish": null
   },
   "dependencies": {
     "lucide-react": "^0.417.0",
@@ -34,7 +21,22 @@
     "@vitejs/plugin-react": "^4.3.1",
     "electron": "^29.4.6",
     "electron-builder": "^24.13.3",
-    "electron-vite": "^2.3.0",
+    "typescript": "^5.5.4",
     "vite": "^5.4.21"
+  },
+  "build": {
+    "appId": "com.crascad.technical-glossary",
+    "productName": "Technical Glossary Search",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "publish": null
   }
 }
