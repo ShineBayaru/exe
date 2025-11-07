@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Glossary Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+      }
+    </script>
+    <style>
+      html {
+        color-scheme: light;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f3f4f6; /* gray-100 */
+        color: #1f2937; /* gray-800 */
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* View Toggle Styles */
+      .view-toggle {
+        display: flex;
+        align-items: center;
+        background-color: #e2e8f0; /* slate-200 */
+        padding: 3px;
+        border-radius: 0.5rem; /* Changed to square */
+        position: relative;
+        width: 90px; /* Increased size */
+        aspect-ratio: 5 / 2; /* Adjusted aspect ratio */
+      }
+
+      .view-toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        border-radius: 0.375rem; /* Changed to square */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        transition: color 0.3s ease;
+        z-index: 1;
+        color: #64748b; /* slate-500 */
+      }
+
+      .view-toggle-btn.active {
+        color: #06b6d4; /* cyan-500 */
+      }
+
+      .view-toggle-indicator {
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        width: calc(50% - 3px);
+        background-color: white;
+        border-radius: 0.375rem; /* Changed to square */
+        border: 1px solid rgba(0,0,0,0.02);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(0);
+      }
+
+      .view-toggle[data-view-mode="card"] .view-toggle-indicator {
+        transform: translateX(calc(100% + 3px));
+      }
+
+      /* Language Toggle Styles */
+      .lang-toggle {
+        display: flex;
+        align-items: center;
+        background-color: #e2e8f0; /* slate-200 */
+        padding: 3px;
+        border-radius: 0.5rem; /* Changed to square */
+        position: relative;
+        width: 100px; /* Increased size */
+        aspect-ratio: 8 / 3; /* Adjusted aspect ratio */
+      }
+
+      .lang-toggle-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        border-radius: 0.375rem; /* Changed to square */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .lang-toggle-indicator {
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        width: calc(50% - 3px);
+        background-color: white;
+        border-radius: 0.375rem; /* Changed to square */
+        border: 1px solid rgba(0,0,0,0.02);
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(0);
+      }
+
+      .lang-toggle[data-lang="en"] .lang-toggle-indicator {
+        transform: translateX(calc(100% + 3px));
+      }
+
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

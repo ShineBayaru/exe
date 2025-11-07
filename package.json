@@ -1,0 +1,40 @@
+{
+  "name": "technical-glossary-desktop",
+  "version": "1.0.1",
+  "description": "A powerful desktop-style application to search, filter, and view a comprehensive technical glossary.",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron-vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pack": "npm run build && electron-builder --win"
+  },
+  "author": "CRASCAD",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.1.0",
+    "vite": "^5.2.8"
+  },
+  "build": {
+    "appId": "com.crascad.technical-glossary",
+    "productName": "Technical Glossary Search",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
