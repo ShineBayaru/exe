@@ -29,6 +29,7 @@
   "build": {
     "appId": "com.crascad.technical-glossary",
     "productName": "Technical Glossary Search",
+    "publish": "never",
     "files": [
       "dist/**/*",
       "electron/**/*"
@@ -38,8 +39,7 @@
       "buildResources": "build"
     },
     "win": {
-      "target": "nsis",
-      "publisherName": null
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
