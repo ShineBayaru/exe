@@ -38,7 +38,8 @@
       "buildResources": "build"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "publisherName": null
     },
     "nsis": {
       "oneClick": false,
