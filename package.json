@@ -9,9 +9,17 @@
     "preview": "vite preview",
     "pack": "npm run build && electron-builder --win"
   },
+  "dependencies": {
+    "lucide-react": "^0.379.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
   "author": "CRASCAD",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
     "electron": "^29.1.0",
     "electron-builder": "^24.13.3",
