@@ -1,1 +1,42 @@
-full contents of package.json
+{
+  "name": "technical-glossary-desktop",
+  "version": "1.0.1",
+  "description": "A powerful desktop-style application to search, filter, and view a comprehensive technical glossary.",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron-vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pack": "npm run build && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.crascad.technicalglossary",
+    "productName": "Technical Glossary Search",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "publisherName": null
+    },
+    "publish": {
+      "provider": "never"
+    }
+  },
+  "dependencies": {
+    "lucide-react": "^0.417.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^29.4.6",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "vite": "^5.4.21"
+  }
+}
